@@ -1,0 +1,87 @@
+:root {
+    --font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --background-color-body: #0e0e24; 
+    --background-color-container: #1d1d4b; 
+    --box-shadow-container: 5px 5px 10px -3px #47597E, -5px -5px 15px 3px #2932411f; 
+    --button-background-color: #0e0e24; 
+    --button-box-shadow: 5px 5px 10px -3px #47597E, -5px -5px 15px 3px #2932411f;
+    --button-active-background-color: #1d1d4b; 
+    --display-background-color: #00000050; 
+    --display-box-shadow: 0px 0px 0px 10px #00000033; 
+    --display-font-size-actual: 1.5em;
+    --display-font-size-anterior: 2em;
+}
+
+
+* {
+    font-family: var(--font-family);
+    color: white;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-color-body);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 105vh;
+}
+
+.calculadora {
+    display: grid;
+    grid-template-columns: repeat(4, 75px);
+    grid-template-rows: 160px repeat(5, 75px);
+    background-color: var(--background-color-container);
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: var(--box-shadow-container);
+}
+
+.col-2 {
+    grid-column: span 2;
+}
+
+button {
+    cursor: pointer;
+    margin: 5px;
+    padding: 0;
+    border-radius: 32px;
+    font-size: 1.5em;
+    border: none;
+    background-color: var(--button-background-color);
+    box-shadow: var(--button-box-shadow);
+}
+
+button:active {
+    background-color: var(--button-active-background-color);
+}
+
+button:focus {
+    outline: none;
+}
+
+.display {
+    grid-column: 1 / -1;
+    display: flex;
+    padding: 16px;
+    background-color: var(--display-background-color);
+    margin: 10px 10px 20px;
+    flex-direction: column;
+    align-items: flex-end;
+    color: white;
+    text-align: right;
+    justify-content: space-between;
+    word-break: break-all;
+    box-shadow: var(--display-box-shadow);
+}
+
+#valor-actual {
+    font-size: var(--display-font-size-actual);
+}
+
+#valor-anterior {
+    font-size: var(--display-font-size-anterior);
+}
